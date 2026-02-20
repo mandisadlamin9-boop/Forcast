@@ -87,6 +87,13 @@ header {
   margin-top: 6px;
   font-size: 28px;
 }
+
+.weather-forecast {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
 .weather-forecast-date {
   text-align: center;
   color: rgba(39, 33, 66, 0.4);
@@ -94,10 +101,12 @@ header {
   line-height: 20px;
   margin-bottom: 10px;
 }
+
 .weather-forecast-icon {
   font-size: 38px;
   text-align: center;
 }
+
 .weather-forecast-temperatures {
   text-align: center;
   color: hsl(12, 78%, 69%);
