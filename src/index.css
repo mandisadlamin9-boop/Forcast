@@ -1,129 +1,181 @@
 body {
   font-family: "Raleway", sans-serif;
-  background: hsl(210, 20%, 96%);
+  background: linear-gradient(145deg, hsl(220 25% 95%), hsl(15 30% 95%));
+  min-height: 100vh;
 }
-
 a {
   color: hsl(12, 80%, 58%);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
-
+a:hover {
+  color: hsl(12, 90%, 48%);
+}
 .weather-app {
-  background: white;
-  max-width: 600px;
-  margin: 45px auto;
-  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
-  border-radius: 16px;
-  padding: 30px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  max-width: 620px;
+  margin: 50px auto;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.04),
+    0 20px 60px rgba(65, 50, 100, 0.06);
+  border-radius: 24px;
+  padding: 36px 40px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
 }
-
 header {
-  border-bottom: 1px solid hsl(210, 20%, 96%);
-  margin-bottom: 20px;
-  padding: 0 0 30px 0;
+  border-bottom: 1px solid hsl(220, 15%, 92%);
+  margin-bottom: 24px;
+  padding: 0 0 28px 0;
 }
-
+.search-form {
+  display: flex;
+  gap: 8px;
+}
 .search-form-input {
   flex: 1;
-  padding: 15px 20px;
+  padding: 14px 22px;
   font-size: 15px;
   width: 75%;
-  border-radius: 10px;
-  border: none;
-  background: hsl(210, 20%, 96%);
+  border-radius: 14px;
+  border: 2px solid transparent;
+  background: hsl(220, 20%, 96%);
   font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  color: hsl(260, 30%, 20%);
+  transition: all 0.25s ease;
+  outline: none;
 }
-
+.search-form-input::placeholder {
+  color: hsl(260, 10%, 62%);
+}
+.search-form-input:focus {
+  border-color: hsl(12, 100%, 82%);
+  background: hsl(0, 0%, 100%);
+  box-shadow: 0 0 0 4px hsla(12, 80%, 58%, 0.1);
+}
 .search-form-button {
-  padding: 15px 30px;
+  padding: 14px 32px;
   border: none;
-  border-radius: 10px;
-  background: hsl(12, 80%, 58%);
+  border-radius: 14px;
+  background: linear-gradient(135deg, hsl(12, 80%, 58%), hsl(16, 85%, 52%));
   color: #fff;
   font-family: "Raleway", sans-serif;
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 15px;
   cursor: pointer;
-  margin-left: 5px;
+  letter-spacing: 0.3px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px hsla(12, 80%, 58%, 0.3);
+}
+.search-form-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px hsla(12, 80%, 58%, 0.4);
+}
+.search-form-button:active {
+  transform: translateY(0);
 }
 .weather-app-data {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
-
 .weather-app-city {
   margin: 0;
-  font-size: 38px;
-  line-height: 48px;
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 800;
+  color: hsl(260, 30%, 18%);
+  letter-spacing: -0.5px;
 }
-
 .weather-app-details {
-  font-size: 16px;
-  color: rgba(39, 33, 66, 0.4);
+  font-size: 15px;
+  color: hsl(260, 15%, 55%);
   line-height: 24px;
   font-weight: 500;
+  margin-top: 6px;
 }
-
 .weather-app-details strong {
-  color: hsl(12, 78%, 69%);
+  color: hsl(12, 78%, 62%);
+  font-weight: 700;
 }
-
 .weather-app-temperature-container {
   display: flex;
+  align-items: flex-start;
 }
-
 .weather-app-icon {
-  width: 88px;
-  height: 88px;
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
 }
-
 .weather-app-temperature {
-  font-size: 88px;
-  line-height: 88px;
-  font-weight: bold;
+  font-size: 80px;
+  line-height: 80px;
+  font-weight: 800;
+  background: linear-gradient(135deg, hsl(260, 30%, 18%), hsl(260, 20%, 35%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
-
 .weatehr-app-unit {
-  margin-top: 6px;
-  font-size: 28px;
+  margin-top: 8px;
+  font-size: 26px;
+  font-weight: 600;
+  color: hsl(260, 15%, 55%);
 }
-
 .weather-forecast {
   display: flex;
   justify-content: space-around;
-  margin-top: 30px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid hsl(220, 15%, 92%);
 }
-
+.weather-forecast-day {
+  transition: transform 0.2s ease;
+}
+.weather-forecast-day:hover {
+  transform: translateY(-2px);
+}
 .weather-forecast-date {
   text-align: center;
-  color: rgba(39, 33, 66, 0.4);
-  font-size: 16px;
+  color: hsl(260, 15%, 55%);
+  font-size: 14px;
   line-height: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
-
 .weather-forecast-icon {
-  font-size: 38px;
-  text-align: center;
+  width: 72px;
+  height: 72px;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.06));
 }
-
 .weather-forecast-temperatures {
   text-align: center;
-  color: hsl(12, 78%, 69%);
-  margin-top: 10px;
+  margin-top: 8px;
   display: flex;
   justify-content: center;
+  gap: 4px;
 }
-
 .weather-forecast-temperature {
-  padding: 0 10px;
-}
-
-footer {
-  border-top: 1px solid hsl(210, 20%, 96%);
-  padding: 20px 0 0 0;
-  margin-top: 20px;
-  text-align: center;
+  padding: 0 6px;
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.6);
+  font-weight: 600;
+  color: hsl(260, 15%, 55%);
+}
+.weather-forecast-temperature strong {
+  color: hsl(12, 78%, 58%);
+}
+footer {
+  border-top: 1px solid hsl(220, 15%, 92%);
+  padding: 20px 0 0 0;
+  margin-top: 24px;
+  text-align: center;
+  font-size: 13px;
+  color: hsl(260, 10%, 55%);
+  letter-spacing: 0.2px;
 }
